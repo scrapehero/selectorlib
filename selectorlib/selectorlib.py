@@ -57,5 +57,5 @@ def extract(html, config, base_url=None):
 
 
 def extract_from_yaml(html, yaml_string, **kwargs):
-    config = yaml.load(yaml_string)
+    config = yaml.safe_load(yaml_string)
     return extract(html, config, **kwargs)
