@@ -48,16 +48,30 @@ def extract_selector(field_config, parent_parser):
     return values
 
 
-def extract(html, config, base_url=None):
-    sel = parsel.Selector(html, base_url=base_url)
-    if base_url:
-        sel.root.make_links_absolute()
-    fields_data = {}
-    for selector_name in config:
-        fields_data[selector_name] = extract_selector(config[selector_name], sel)
-    return fields_data
+class Selector:
+    """selector class"""
+    def __init__(self, config):
+        self.config = config
 
+    @classmethod
+    def from_yaml_string(cls, yaml_string: str):
+        """create selector object from yaml string"""
+        config = yaml.safe_load(yaml_string)
+        return cls(config)
 
-def extract_with_yaml(html, yaml_string, **kwargs):
-    config = yaml.safe_load(yaml_string)
-    return extract(html, config, **kwargs)
+    @classmethod
+    def from_yaml_file(cls, yaml_filename: str):
+        """create selector object from yaml file"""
+        with open(yaml_filename) as yaml_fileobj:
+            config = yaml.safe_load(yaml_fileobj.read())
+        return cls(config)
+
+    def extract(self, html: str, base_url: str = None):
+        """returns extracted dict"""
+        sel = parsel.Selector(html, base_url=base_url)
+        if base_url:
+            sel.root.make_links_absolute()
+        fields_data = {}
+        for selector_name, selector_config in self.config.items():
+            fields_data[selector_name] = extract_selector(selector_config, sel)
+        return fields_data

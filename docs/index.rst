@@ -1,14 +1,15 @@
 Welcome to selectorlib's documentation!
 ======================================
 
+.. include:: ../README.rst
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-   readme
+
    installation
-   usage
-   modules
+   selectorlib
    contributing
    authors
    history

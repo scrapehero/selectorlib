@@ -1,22 +1,47 @@
-next_url:
-    selector: 'li.a-last a'
-    type: Link
-results:
-    selector: 'div.sg-col-14-of-20 span.a-color-base'
-    type: HTML
-attributetest:
-    selector: 'div#nav-logo a'
-    type: Attribute
-    attribute: aria-label
-product:
-    selector: div.s-expand-height
+name:
+    selector: h1.product_title
+    type: Text
+price:
+    selector: p.price
+    type: Text
+stock:
+    selector: p.stock
+    type: Text
+tags:
+    selector: 'span.tagged_as a'
+    type: Text
+short_description:
+    selector: '.woocommerce-product-details__short-description > p'
+    type: Text
+description:
+    selector: 'div#tab-description p'
+    type: Text
+attributes:
+    selector: table.shop_attributes
     multiple: true
     type: Text
     children:
         name:
-            selector: span.a-size-base-plus
+            selector: th
             type: Text
+        value:
+            selector: td
+            type: Text
+related_products:
+    selector: li.product
+    multiple: true
+    type: Text
+    children:
+        name:
+            selector: h2
+            type: Text
+        url:
+            selector: a
+            type: Link
         price:
-            selector: span.a-price-whole
+            selector: .price
             type: Text
-    
+        sku:
+            selector: a.button
+            type: Attribute
+            attribute: data-product_sku

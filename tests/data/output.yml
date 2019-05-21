@@ -1,64 +1,14 @@
-product:
-  - {price: '299', name: Redux Analogue Brown Dial Men's & Boy's Watch RWS0200S}
-  - {price: '461', name: SKMEI Analog-Digital Black Dial Men's Watch - AD1155 (BK White)}
-  - {price: '299', name: Redux Analogue Blue Dial Men's & Boy's Watch RWS0216S}
-  - {price: '289', name: Espoir Analog Blue Dial Men's Watch - ESP12457}
-  - {price: '359', name: Vills Laurrens Analogue Black Dial Day and Date Series Men's
-      Watch}
-  - {price: '305', name: Fogg Analog White Day and Date Men's Watch 2047-WH}
-  - {price: '279', name: REDUX Analogue Black Dial Men's Watch (Rws0106)}
-  - {price: '330', name: Geneva Analog RoseGold Dial Women's Watch-g8027_D}
-  - {price: '289', name: Espoir Analog Blue Dial Men's Watch-LCS-96145}
-  - {price: '480', name: Sonata Analog Blue Dial Women's Watch -NJ8989PP04C}
-  - {price: '449', name: Swisstyle Analogue White Dial & Black Dial Womens Watches (Ss-703W-703B)(Set
-      of 2)}
-  - {price: '299', name: Redux Analogue Brown Dial Men's & Boy's Watch RWS0215S}
-  - {price: '279', name: Espoir Analog Blue Dial Men's Watch-ES-81940}
-  - {price: '478', name: SWISSTONE Analogue Pink Dial Silver Plated Bracelet Women's
-      Wrist Watch}
-  - {price: '375', name: Foxter Pack of 3 Multicolour Analog Analog Watch for Men and
-      Boys}
-  - {price: '220', name: Styllent Digital Black Colour Watch for Boys 2010}
-  - {price: '399', name: Sonata Digital Grey Dial Men's Watch -NK7982PP04}
-  - {price: '326', name: Acnos Special Super Quality Analog Watches Combo Look Like
-      Preety for Girls and Women Pack of - 3(605-BLK-ORG-SKY)}
-  - {price: '447', name: Skmei Analog-Digital Black Dial Men's Watch - 1155 Gold}
-  - {price: '449', name: Swisstyle Anolog Black Dial Men's Watch-SS-GR06612-BLK-CH}
-  - {price: '399', name: SWISSTONE Analogue Brown Dial and Leather Strap Men's Watch}
-  - {price: '390', name: Skyloft Analog Black Dial Women's Watch - J49}
-  - {price: '447', name: Skmei Analog-Digital Black Dial Men's Watch - 1155-Blue}
-  - {price: '447', name: Skmei Analog-Digital Black Dial Men's Watch - 1155-Red}
-  - {price: '359', name: Espoir Analog Gold Dial Men's Watch-ESP12459}
-  - {price: '499', name: Rich Club Pack of 4 Multicolour Analog Analog Watch for Men
-      and Boys}
-  - {price: '329', name: Fogg Analog Blue Day and Date Men's Watch 2047-BL}
-  - {price: '305', name: Fogg Analog Black Dial Women's Watch 4049-BK}
-  - {price: '216', name: Howdy Analogue Black Dial Women's Watch (Black) 318}
-  - {price: '459', name: PIRASO Fasttrend Analogue Black Dial Girl's Watch- PW3-07}
-  - {price: '325', name: Fogg Stainless Steel Day and Date Blue Dial Analog Mens Watch
-      (2038-BL)}
-  - {price: '399', name: Matrix Premium Day & Date Black Dial Watch for Men's & Boys
-      (DD-53)}
-  - {price: '189', name: Swadesi Stuff Silicone LED Digital Good Looking Kids Watch
-      for Boys & Girls}
-  - {price: '199', name: PZOZ Analogue Black Dial Brown Leather Men's Watches}
-  - {price: '305', name: Fadiso Fashion Blue Dial Day and Date Functioning Analogue
-      Men's Watch}
-  - {price: '429', name: Foxter Quartz Movement Analogue Display Multicoloured Dial
-      Men's Watch(ARMBLK~27GREY~27SMILY) - Pack of 3}
-  - {price: '299', name: PIRASO Analogue Black Dial Men's Watch}
-  - {price: '199', name: Swadesi Stuff Digital Black Dial Boy's Watch- 5696}
-  - {price: '292', name: Eddy Hager Brown Day & Date Men's Watch EH-153-BR}
-  - {price: '399', name: Sonata Super Fibre Digital Grey Dial Men's Watch -NK7982PP02}
-  - {price: '323', name: Fogg Quartz Movement Pink Dial Women's Watch - 4054-PK}
-  - {price: '299', name: Eddy Hager Analogue Blue Dial Men's Watch - EH-210-BL}
-  - {price: '449', name: Eddy Hager 800 Digital Army Green Sports Watch - for Men}
-  - {price: '299', name: Fogg Brown Day and Date Men's Watch 1164-BR}
-  - {price: '278', name: Espoir Analog White Dial Men's Watch - ES133}
-  - {price: '299', name: ADAMO Enchant Women's & Girl's Watch BG-971}
-  - {price: '199', name: Cloudwood Analog Bangle Gold Dial Luxury Fashion Bracelet Watch
-      for Women & Girls -W158}
-  - {price: '279', name: Redux Analogue Blue Dial Men's & Boy's Watch RWS0130S}
-next_url: https://www.amazon.in/s?i=watches&bbn=1350387031&rh=n%3A1350387031%2Cp_36%3A-49900&lo=visual_grid&page=2&pd_rd_r=7946767e-1145-47e3-b524-6645805407f5&pd_rd_w=Ww8Y2&pd_rd_wg=Wpv7t&pf_rd_p=68986e27-9447-4ba1-b222-fe7b14a47960&pf_rd_r=5FTG3J2X453KM0HS2CFR&qid=1558354927&ref=sr_pg_1
-results: '<span class="a-color-base a-text-bold">Watches</span>'
-attributetest: 'Amazon'
+attributes:
+- {name: Weight, value: 15.2 kg}
+description: "Bulbasaur can be seen napping in bright sunlight. There is a seed on\
+  \ its back. By soaking up the sun\u2019s rays, the seed grows progressively larger."
+name: Bulbasaur
+price: "\xA3 63.00"
+related_products:
+- {name: Fearow, price: "\xA3 95.00", sku: '9127', url: 'https://scrapeme.live/shop/Fearow/'}
+- {name: Blastoise, price: "\xA3 76.00", sku: '5212', url: 'https://scrapeme.live/shop/Blastoise/'}
+- {name: Arbok, price: "\xA3 182.00", sku: '9230', url: 'https://scrapeme.live/shop/Arbok/'}
+short_description: "Bulbasaur can be seen napping in bright sunlight. There is a seed\
+  \ on its back. By soaking up the sun\u2019s rays, the seed grows progressively larger."
+stock: 45 in stock
+tags: bulbasaur
