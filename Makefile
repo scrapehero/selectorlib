@@ -54,7 +54,7 @@ lint: ## check style with flake8
 	flake8 selectorlib tests
 
 test: ## run tests quickly with the default Python
-	py.test
+	python -m pytest
 
 test-all: ## run tests on every Python version with tox
 	tox

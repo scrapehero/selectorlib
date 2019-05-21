@@ -1,0 +1,15 @@
+next_url:
+    selector: 'li.a-last a'
+    type: Link
+product:
+    selector: div.s-expand-height
+    repeat: true
+    type: Text
+    children:
+        name:
+            selector: span.a-size-base-plus
+            type: Text
+        price:
+            selector: span.a-price-whole
+            type: Text
+    
