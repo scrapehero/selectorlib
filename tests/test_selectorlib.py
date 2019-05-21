@@ -37,7 +37,7 @@ def test_content(html, input_yaml, output_yaml):
     base_url = "https://www.amazon.in/s?bbn=1350387031&rh=n%3A1350387031%2Cp_36%3A-49900\
 &pd_rd_r=7946767e-1145-47e3-b524-6645805407f5&pd_rd_w=Ww8Y2&pd_rd_wg=Wpv7t&pf_rd_p=68986\
 e27-9447-4ba1-b222-fe7b14a47960&pf_rd_r=5FTG3J2X453KM0HS2CFR&ref=pd_gw_unk"
-    output = selectorlib.extract_from_yaml(html, input_yaml, base_url=base_url)
+    output = selectorlib.extract_with_yaml(html, input_yaml, base_url=base_url)
     assert output == yaml.safe_load(output_yaml)
 
 

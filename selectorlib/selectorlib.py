@@ -49,13 +49,14 @@ def extract_selector(field_config, parent_parser):
 
 def extract(html, config, base_url=None):
     sel = parsel.Selector(html, base_url=base_url)
-    sel.root.make_links_absolute()
+    if base_url:
+        sel.root.make_links_absolute()
     fields_data = {}
     for selector_name in config:
         fields_data[selector_name] = extract_selector(config[selector_name], sel)
     return fields_data
 
 
-def extract_from_yaml(html, yaml_string, **kwargs):
+def extract_with_yaml(html, yaml_string, **kwargs):
     config = yaml.safe_load(yaml_string)
     return extract(html, config, **kwargs)
