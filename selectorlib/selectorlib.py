@@ -5,7 +5,8 @@ import yaml
 
 def extract_field(element, item_type, attribute=None):
     if item_type == 'Text':
-        content = "".join(element.xpath('.//text()').getall())
+        texts = [i.strip() for i in element.xpath('.//text()').getall() if i.strip()]
+        content = " ".join(texts)
     elif item_type == 'Link':
         content = element.xpath('.//@href').get()
     elif item_type == 'HTML':
