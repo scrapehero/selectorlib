@@ -3,7 +3,7 @@ next_url:
     type: Link
 product:
     selector: div.s-expand-height
-    repeat: true
+    multiple: true
     type: Text
     children:
         name:

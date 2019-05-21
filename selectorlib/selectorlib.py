@@ -10,7 +10,7 @@ def extract_field(element, item_type, attribute=None):
         content = element.xpath('.//@href').get()
     elif item_type == 'HTML':
         content = element.get()
-    elif item_type == 'ElementAttribute':
+    elif item_type == 'Attribute':
         content = element.attrib.get(attribute)
     return content
 
@@ -39,7 +39,7 @@ def extract_selector(field_config, parent_parser):
             value = extract_field(element, item_type,
                                   field_config.get('attribute'))
 
-        if field_config.get('repeat') is not True:
+        if field_config.get('multiple') is not True:
             return value
         else:
             values.append(value)
