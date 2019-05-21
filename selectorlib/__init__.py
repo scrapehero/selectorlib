@@ -4,4 +4,4 @@
 
 __author__ = """scrapehero"""
 __email__ = 'pypi@scrapehero.com'
-__version__ = '0.1.0'
+__version__ = '0.2.0'
