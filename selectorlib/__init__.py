@@ -4,6 +4,6 @@
 
 __author__ = """scrapehero"""
 __email__ = 'pypi@scrapehero.com'
-__version__ = '0.2.0'
+__version__ = '0.3.0'
 
 from .selectorlib import extract_with_yaml  # noqa:F401
