@@ -4,6 +4,14 @@ selectorlib package
 Submodules
 ----------
 
+selectorlib.cli module
+----------------------
+
+.. automodule:: selectorlib.cli
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 selectorlib.selectorlib module
 ------------------------------
 
