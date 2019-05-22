@@ -45,3 +45,4 @@ related_products:
             selector: a.button
             type: Attribute
             attribute: data-product_sku
+            format: Integer

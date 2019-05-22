@@ -10,6 +10,7 @@ import yaml
 from click.testing import CliRunner
 
 from selectorlib import selectorlib
+from selectorlib import formatter
 from selectorlib import cli
 
 
@@ -35,7 +36,8 @@ def output_yaml():
 
 def test_content(html, input_yaml, output_yaml):
     base_url = "https://scrapeme.live/shop/Bulbasaur/"
-    selector = selectorlib.Selector.from_yaml_string(input_yaml)
+    formatters = [formatter.Integer]
+    selector = selectorlib.Selector.from_yaml_string(input_yaml, formatters=formatters)
     output = selector.extract(html, base_url=base_url)
     assert output == yaml.safe_load(output_yaml)
 
