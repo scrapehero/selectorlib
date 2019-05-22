@@ -1,0 +1,14 @@
+attributes:
+- {name: Weight, value: 15.2 kg}
+description: "Bulbasaur can be seen napping in bright sunlight. There is a seed on\
+  \ its back. By soaking up the sun\u2019s rays, the seed grows progressively larger."
+name: Bulbasaur
+price: "\xA3 63.00"
+related_products:
+- {name: Fearow, price: "\xA3 95.00", sku: '9127', url: 'https://scrapeme.live/shop/Fearow/'}
+- {name: Blastoise, price: "\xA3 76.00", sku: '5212', url: 'https://scrapeme.live/shop/Blastoise/'}
+- {name: Arbok, price: "\xA3 182.00", sku: '9230', url: 'https://scrapeme.live/shop/Arbok/'}
+short_description: "Bulbasaur can be seen napping in bright sunlight. There is a seed\
+  \ on its back. By soaking up the sun\u2019s rays, the seed grows progressively larger."
+stock: 45 in stock
+tags: bulbasaur

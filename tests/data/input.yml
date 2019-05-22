@@ -1,0 +1,47 @@
+name:
+    selector: h1.product_title
+    type: Text
+price:
+    selector: p.price
+    type: Text
+stock:
+    selector: p.stock
+    type: Text
+tags:
+    selector: 'span.tagged_as a'
+    type: Text
+short_description:
+    selector: '.woocommerce-product-details__short-description > p'
+    type: Text
+description:
+    selector: 'div#tab-description p'
+    type: Text
+attributes:
+    selector: table.shop_attributes
+    multiple: true
+    type: Text
+    children:
+        name:
+            selector: th
+            type: Text
+        value:
+            selector: td
+            type: Text
+related_products:
+    selector: li.product
+    multiple: true
+    type: Text
+    children:
+        name:
+            selector: h2
+            type: Text
+        url:
+            selector: a
+            type: Link
+        price:
+            selector: .price
+            type: Text
+        sku:
+            selector: a.button
+            type: Attribute
+            attribute: data-product_sku

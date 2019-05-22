@@ -1,0 +1,19 @@
+language: python
+sudo: required
+dist: xenial
+python:
+- 3.7
+- 3.6
+- 3.5
+install: pip install -U tox-travis
+script: tox
+deploy:
+  provider: pypi
+  distributions: sdist bdist_wheel
+  user: scrapehero
+  password:
+    secure: jf5huAozFEzCzJYOhumI2nePKSO8g5eBesDmmzcX2pMRHB+al9qM1VrvwdaSIo5ryTC9Cw9G/CGFDuvW8hi6/oRoZ2s6Udbh4Cq8V7/TeGYB9facMc6yStct0An8qJwV0PnFMJ05UjT35RycFq/FOW+YFHn95dM/7m6eTUHYcX4DQw0o043+9wcHRzjrG5xnOD9v/m3A/gTxBMEoaJy2VwCqrcfZ6IPGQCY8bYxnuczzEHuHkk/z/VPRqW+SUlCFUBs0Wjz41XmJlsXfKlmyfkjAbNoOKCn9ysm16ZySE0qUgAoRe3RoBMps8eT4bQuZfwmxJha4Pf08UBueeDTaPtBlQsAWlRvppLT+PT24y8LAHHhnOX874HSMd1qerQDyEa57mkupOcwUiQfADUdF1XZb/xmmhNkX5pKQqGENu36CKfZ+9FIfN57gUn5la3+q2RVm98LkVRY003/aMvetdhzpNMxEE0sljQ0DQzE3GVHm630wlvx2eDYnhaBrZFA8Uc1pXER6ZX4boTZXHTUiegGXMvboIU5zoWyU++z+Uj74GHb4caYcelm3lnKQjlsg4rFEkfWTUC72sXOK3fHqKNy5nKdppXYWRsZARDFlWqE1TEL6T0yvzQJJe8YII445jg4a8Mdg9ZDVYt5WoO3uPcouTD7eWtplSR2VANw7M9c=
+  on:
+    tags: true
+    repo: scrapehero/selectorlib
+    python: 3.7
