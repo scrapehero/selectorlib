@@ -56,7 +56,7 @@ class Selector:
         if 'xpath' in field_config:
             elements = parent_parser.xpath(field_config['xpath'])
         else:
-            elements = parent_parser.css(field_config['selector'])
+            elements = parent_parser.css(field_config['css'])
         item_type = field_config.get('type', 'Text')
         values = []
 
