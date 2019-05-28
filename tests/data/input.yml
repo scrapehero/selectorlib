@@ -1,48 +1,48 @@
 name:
-    selector: h1.product_title
+    css: h1.product_title
     type: Text
 price:
-    selector: p.price
+    css: p.price
     type: Text
 stock:
-    selector: p.stock
+    css: p.stock
     type: Text
 tags:
-    selector: 'span.tagged_as a'
+    css: 'span.tagged_as a'
     type: Text
 short_description:
-    selector: '.woocommerce-product-details__short-description > p'
+    css: '.woocommerce-product-details__short-description > p'
     type: Text
 description:
-    selector: 'div#tab-description p'
+    css: 'div#tab-description p'
     type: Text
 attributes:
-    selector: table.shop_attributes
+    css: table.shop_attributes
     multiple: true
     type: Text
     children:
         name:
-            selector: th
+            css: th
             type: Text
         value:
-            selector: td
+            css: td
             type: Text
 related_products:
-    selector: li.product
+    css: li.product
     multiple: true
     type: Text
     children:
         name:
-            selector: h2
+            css: h2
             type: Text
         url:
-            selector: a
+            css: a
             type: Link
         price:
-            selector: .price
+            css: .price
             type: Text
         sku:
-            selector: a.button
+            css: a.button
             type: Attribute
             attribute: data-product_sku
             format: Integer
