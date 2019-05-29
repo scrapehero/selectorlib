@@ -22,7 +22,28 @@ selectorlib
 
 A library to read a YML file with Xpath or CSS Selectors and extract data from HTML pages using them
 
-
 * Free software: MIT license
 * Documentation: https://selectorlib.readthedocs.io.
 
+
+Example
+--------
+
+>>> from selectorlib import Extractor
+>>> yaml_string = """
+    title:
+        selector: "h1"
+        type: Text
+    link:
+        selector: "h2 a"
+        type: Link
+    """
+>>> extractor = Extractor.from_yaml_string(yaml_string)
+>>> html = """
+    <h1>Title</h1>
+    <h2>Usage
+        <a class="headerlink" href="http://test">¶</a>
+    </h2>
+    """
+>>> selector.extract(html)
+{'title': 'Title', 'link': 'http://test'}

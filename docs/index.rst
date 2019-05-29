@@ -1,5 +1,5 @@
 Welcome to selectorlib's documentation!
-======================================
+=======================================
 
 .. include:: ../README.rst
 

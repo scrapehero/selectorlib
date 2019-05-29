@@ -6,4 +6,4 @@ __author__ = """scrapehero"""
 __email__ = 'pypi@scrapehero.com'
 __version__ = '0.10.0'
 
-from .selectorlib import Selector  # noqa:F401
+from .selectorlib import Extractor  # noqa:F401

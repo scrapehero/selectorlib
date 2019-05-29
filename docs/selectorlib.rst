@@ -5,39 +5,17 @@ Module contents
 ---------------
 
 .. automodule:: selectorlib
-    :members: Selector
+    :members: Extractor
 
 
 
 Usage
 -----
 
-To use selectorlib in a project::
-
->>> import selectorlib
-
->>> yaml_string = """
-    title:
-        selector: "h1"
-        type: Text
-    link:
-        selector: "h2 a"
-        type: Link
-    """
->>> selector = selectorlib.Selector.from_yaml_string(yaml_string)
->>> html = """
-    <h1>Title</h1>
-    <h2>Usage
-        <a class="headerlink" href="http:://test">¶</a>
-    </h2>
-    """
->>> selector.extract(html)
-{'title': 'Title', 'link': 'http:://test'}
-
-To use selectorlib with requests
+To use selectorlib with requests:
 
 >>> import requests
->>> from selectorlib import Selector
+>>> from selectorlib import Extractor
 >>> selector_yaml = """
 name:
     selector: h1.product_title
@@ -70,7 +48,7 @@ related_products:
         price:
             selector: .price
 """
->>> selector = Selector.from_yaml_string(selector_yaml)
+>>> extractor = Extractor.from_yaml_string(selector_yaml)
 >>> url = 'https://scrapeme.live/shop/Bulbasaur/'
 >>> response = requests.get(url)
 >>> selector.extract(response.text, base_url=response.url)
