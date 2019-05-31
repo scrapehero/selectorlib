@@ -1,4 +1,4 @@
-selectorlib package
+API Reference
 ===================
 
 Extractor Class
