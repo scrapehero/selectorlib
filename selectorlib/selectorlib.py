@@ -35,7 +35,7 @@ class Extractor:
 
         >>> yaml_string = '''
             title:
-                selector: "h1"
+                css: "h1"
                 type: Text
             '''
         >>> extractor = Extractor.from_yaml_string(yaml_string)
@@ -62,7 +62,7 @@ class Extractor:
             dict: extracted data from given html string
 
         >>> response = requests.get(url)
-        >>> selector.extract(response.text, base_url=response.url)
+        >>> extractor.extract(response.text, base_url=response.url)
         """
         sel = parsel.Selector(html, base_url=base_url)
         if base_url:

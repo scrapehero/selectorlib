@@ -1,46 +1,47 @@
 Usage
 ======
 
-To use selectorlib with requests:
+Using selectorlib with requests
+--------------------------------
 
 >>> import requests
 >>> from selectorlib import Extractor
 >>> selector_yaml = """
 name:
-    selector: h1.product_title
+    css: h1.product_title
 price:
-    selector: p.price
+    css: p.price
 stock:
-    selector: p.stock
+    css: p.stock
 tags:
-    selector: span.tagged_as a
+    css: span.tagged_as a
 short_description:
-    selector: .woocommerce-product-details__short-description > p
+    css: .woocommerce-product-details__short-description > p
 description:
-    selector: div#tab-description p
+    css: div#tab-description p
 attributes:
-    selector: table.shop_attributes
+    css: table.shop_attributes
     multiple: True
     children:
         name:
-            selector: th
+            css: th
         value:
-            selector: td
+            css: td
 related_products:
-    selector: li.product
+    css: li.product
     multiple: True
     children:
         name:
-            selector: h2
+            css: h2
         url:
-            selector: a[href]
+            css: a[href]
         price:
-            selector: .price
+            css: .price
 """
 >>> extractor = Extractor.from_yaml_string(selector_yaml)
 >>> url = 'https://scrapeme.live/shop/Bulbasaur/'
 >>> response = requests.get(url)
->>> selector.extract(response.text, base_url=response.url)
+>>> extractor.extract(response.text, base_url=response.url)
 {'attributes': [{'name': 'Weight', 'value': '15.2 kg'}],
  'description': 'Bulbasaur can be seen napping in bright sunlight. There is a '
                 'seed on its back. By soaking up the sun’s rays, the seed '
@@ -61,3 +62,29 @@ related_products:
                       'the seed grows progressively larger.',
  'stock': '45 in stock',
  'tags': 'bulbasaur'}
+
+
+Using formatter with selectors
+-------------------------------
+
+>>> from selectorlib import Extractor, Formatter
+>>> class Number(Formatter):
+        def format(self, text):
+            return int(text)
+>>> yaml_string = """
+    title:
+        css: "h1"
+        type: Text
+    num:
+        css: "h2 span"
+        format: Number
+    """
+>>> formatters = Formatter.get_all()
+>>> extractor = Extractor.from_yaml_string(yaml_string, formatters=formatters)
+>>> html = """
+    <h1>Title</h1>
+    <h2>
+        <span>123</span>
+    </h2>
+    """
+>>> extractor.extract(html)

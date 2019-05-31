@@ -32,10 +32,10 @@ Example
 >>> from selectorlib import Extractor
 >>> yaml_string = """
     title:
-        selector: "h1"
+        css: "h1"
         type: Text
     link:
-        selector: "h2 a"
+        css: "h2 a"
         type: Link
     """
 >>> extractor = Extractor.from_yaml_string(yaml_string)
@@ -45,5 +45,5 @@ Example
         <a class="headerlink" href="http://test">¶</a>
     </h2>
     """
->>> selector.extract(html)
+>>> extractor.extract(html)
 {'title': 'Title', 'link': 'http://test'}

@@ -37,8 +37,8 @@ def output_yaml():
 def test_content(html, input_yaml, output_yaml):
     base_url = "https://scrapeme.live/shop/Bulbasaur/"
     formatters = formatter.Formatter.get_all()
-    selector = selectorlib.Extractor.from_yaml_string(input_yaml, formatters=formatters)
-    output = selector.extract(html, base_url=base_url)
+    extractor = selectorlib.Extractor.from_yaml_string(input_yaml, formatters=formatters)
+    output = extractor.extract(html, base_url=base_url)
     assert output == yaml.safe_load(output_yaml)
 
 
