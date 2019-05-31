@@ -47,7 +47,7 @@ class Extractor:
     def from_yaml_file(cls, yaml_filename: str, formatters=None):
         """create `Extractor` object from yaml file
 
-        >>> extractor = Extractor.from_yaml_string(yaml_filename='selectors.yaml')
+        >>> extractor = Extractor.from_yaml_string('selectors.yaml')
         """
         with open(yaml_filename) as yaml_fileobj:
             config = yaml.safe_load(yaml_fileobj.read())

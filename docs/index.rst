@@ -9,6 +9,7 @@ Welcome to selectorlib's documentation!
 
 
    installation
+   usage
    selectorlib
    contributing
    authors
