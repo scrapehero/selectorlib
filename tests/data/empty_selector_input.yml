@@ -1,0 +1,13 @@
+variants:
+    css: 'form.a-section li'
+    multiple: true
+    type: Text
+    children:
+        name:
+            css: ""
+            type: Attribute
+            attribute: title
+        asin:
+            css: ""
+            type: Attribute
+            attribute: data-defaultasin

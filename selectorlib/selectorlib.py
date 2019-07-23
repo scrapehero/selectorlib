@@ -71,12 +71,18 @@ class Extractor:
         for selector_name, selector_config in self.config.items():
             fields_data[selector_name] = self._extract_selector(selector_config, sel)
         return fields_data
-
+    
+    def _extract_css(self, parser, css):
+        if css == '':
+            return [parser]
+        return parser.css(css)
+        
     def _extract_selector(self, field_config, parent_parser):
         if 'xpath' in field_config:
             elements = parent_parser.xpath(field_config['xpath'])
         else:
-            elements = parent_parser.css(field_config['css'])
+            elements = self._extract_css(parent_parser, field_config['css'])
+        
         item_type = field_config.get('type', 'Text')
         values = []
 
