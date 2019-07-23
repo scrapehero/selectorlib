@@ -1,157 +1,48 @@
-variants:
-    css: 'form.a-section li'
+name:
+    css: h1.product_title
+    type: Text
+price:
+    css: p.price
+    type: Text
+stock:
+    css: p.stock
+    type: Text
+tags:
+    css: 'span.tagged_as a'
+    type: Text
+short_description:
+    css: '.woocommerce-product-details__short-description > p'
+    type: Text
+description:
+    css: 'div#tab-description p'
+    type: Text
+attributes:
+    css: table.shop_attributes
     multiple: true
     type: Text
     children:
         name:
-            css: ""
-            type: Attribute
-            attribute: title
-        asin:
-            css: ""
-            type: Attribute
-            attribute: data-defaultasin
-sizes:
-    css: 'li[role=option] a'
-    multiple: true
-    type: Text
-    children:
-        size:
-            css: ""
-            type: Text
-        asin:
-            css: ""
-            type: Attribute
-            attribute: data-value
-name:
-    css: '#productTitle'
-    type: Text
-price:
-    css: 'tr#priceblock_ourprice_row'
-    type: Text
-short_description:
-    css: 'div#featurebullets_feature_div.feature'
-    type: Text
-image:
-    css: '.imgTagWrapper img'
-    type: Attribute
-    attribute: src
-images:
-    css: '.imgTagWrapper img'
-    type: Attribute
-    attribute: data-a-dynamic-image
-rating:
-    css: span.arp-rating-out-of-text
-    type: Text
-number_of_reviews:
-    css: 'a.a-link-normal h2'
-    type: Text
-product_description:
-    css: '#productDescription'
-    type: Text
-metadata:
-    css: 'div.a-section.a-spacing-extra-large div.a-section div ul.a-unordered-list li'
-    multiple: true
-    type: Text
-    children:
-        title:
-            css: span.a-text-bold
+            css: th
             type: Text
         value:
-            css: 'span:nth-of-type(2)'
+            css: td
             type: Text
-sales_rank:
-    css: 'li#SalesRank'
-    type: Text
-reviews:
-    css: 'div.a-section div.a-section div.a-row div.a-section.celwidget'
-    multiple: true
-    type: Text
-    children:
-        author:
-            css: span.a-profile-name
-            type: Text
-        date:
-            css: span.a-size-base.a-color-secondary
-            type: Text
-        variant:
-            css: 'div.a-row.a-spacing-mini span.a-color-secondary'
-            type: Text
-        is_verified:
-            css: 'div.a-row.a-spacing-mini.review-data span[data-hook="avp-badge-linkless"]'
-            type: Text
-        content:
-            css: 'div.a-expander-content span'
-            type: Text
-        images:
-            css: 'div.review-image-tile-section img'
-            multiple: true
-            type: Attribute
-            attribute: src
-        rating:
-            css: 'i[data-hook="review-star-rating"]'
-            type: Text
-link_to_all_reviews:
-    css: 'div.card-padding a.a-link-emphasis'
-    type: Link
 related_products:
-    css: '.similarities-aui-carousel.a-carousel-container,#sp_detail,#sp_detail2'
+    css: li.product
     multiple: true
     type: Text
     children:
-        type:
-            css: h2.a-carousel-heading
+        name:
+            css: h2
             type: Text
-        products:
-            css: li.a-carousel-card
-            multiple: true
+        url:
+            css: a
+            type: Link
+        price:
+            css: .price
             type: Text
-            children:
-                name:
-                    css: a.a-link-normal
-                    type: Attribute
-                    attribute: title
-                link:
-                    css: a.a-link-normal
-                    type: Link
-                price:
-                    css: '.a-row:last-child() '
-                    type: Text
-                rating:
-                    css: 'i span.a-icon-alt'
-                    type: Text
-review_word_cloud:
-    css: span.cr-lighthouse-term
-    multiple: true
-    type: Text
-questions:
-    css: 'span.askTopQandA div.a-section > div.a-fixed-left-grid > div.a-fixed-left-grid-inner'
-    multiple: true
-    type: Text
-    children:
-        title:
-            css: 'a.a-link-normal span.a-declarative'
-            type: Text
-        answer:
-            css: 'div.a-fixed-left-grid-col.a-col-right > span:nth-of-type(1)'
-            type: Text
-        votes:
-            css: span.count
-            type: Text
-        answer_author_date:
-            css: span.a-color-tertiary
-            type: Text
-from_manufacturer:
-    css: 'div#dpx-aplus-product-description_feature_div'
-    type: Text
-review_histogram:
-    css: '#histogramTable tr'
-    multiple: true
-    type: Text
-    children:
-        rating:
-            css: 'td.aok-nowrap:nth-of-type(1)'
-            type: Text
-        pecentage:
-            css: td.a-text-right
-            type: Text
+        sku:
+            css: a.button
+            type: Attribute
+            attribute: data-product_sku
+            format: Integer

@@ -64,10 +64,9 @@ def test_command_line_interface():
     assert help_result.exit_code == 0
     assert '--help  Show this message and exit.' in help_result.output
 
-# def test_empty_selector_in_children(amazon_nike_product_page_html, empty_selector_yaml, amazon_nike_product_page_output):
-#     base_url = "https://www.amazon.com/NIKE-Monarch-Cross-Trainer-Regular/dp/B004K4CIKC/ref=sr_1_3?qid=1563864262&refinements=p_89:NIKE&s=apparel&sr=1-3"
-#     formatters = formatter.Formatter.get_all()
-#     extractor = selectorlib.Extractor.from_yaml_string(empty_selector_yaml, formatters=formatters)
-#     output = extractor.extract(amazon_nike_product_page_html, base_url=base_url)
-#     print(output)
-#     assert output == json.loads(amazon_nike_product_page_output)
+def test_empty_selector_in_children(amazon_nike_product_page_html, empty_selector_yaml, amazon_nike_product_page_output):
+    base_url = "https://www.amazon.com/NIKE-Monarch-Cross-Trainer-Regular/dp/B004K4CIKC/ref=sr_1_3?qid=1563864262&refinements=p_89:NIKE&s=apparel&sr=1-3"
+    formatters = formatter.Formatter.get_all()
+    extractor = selectorlib.Extractor.from_yaml_string(empty_selector_yaml, formatters=formatters)
+    output = extractor.extract(amazon_nike_product_page_html, base_url=base_url)
+    assert output == json.loads(amazon_nike_product_page_output)
