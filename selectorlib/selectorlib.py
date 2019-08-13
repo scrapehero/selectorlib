@@ -73,7 +73,7 @@ class Extractor:
         return fields_data
 
     def _extract_selector(self, field_config, parent_parser):
-        if field_config.get("xpath") is None:
+        if field_config.get("xpath") is not None:
             elements = parent_parser.xpath(field_config['xpath'])
         else:
             css = field_config['css']
