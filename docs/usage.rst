@@ -10,7 +10,7 @@ https://scrapeme.live/shop/
 
 Lets extract Here is a sample YML that SelectorLib accepts as Input
 
-.. code:: yml
+.. code:: yaml
 
     pokemon:
         css: li.product
@@ -146,7 +146,7 @@ defined as
 
 Used in the YAML as
 
-.. code:: yml
+.. code:: yaml
 
     price:
         css: span.woocommerce-Price-amount
@@ -165,7 +165,7 @@ Python Example
 
 ``scrapeme_listing_page.yml``
 
-.. code:: yml
+.. code:: yaml
 
     pokemon:
         css: li.product
