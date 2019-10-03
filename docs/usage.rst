@@ -138,9 +138,9 @@ defined as
 
 ::
 
-    from selectorlib.formatter import Formattter
+    from selectorlib.formatter import Formatter
 
-    class Price(Formattter):
+    class Price(Formatter):
         def format(self, text):
             return text.replace('\\n','').strip()
 
