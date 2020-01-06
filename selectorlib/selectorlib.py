@@ -14,6 +14,8 @@ def extract_field(element, item_type, attribute=None, formatter=None):
         content = element.get()
     elif item_type == 'Attribute':
         content = element.attrib.get(attribute)
+    elif item_type == 'Image':
+        content = element.attrib.get('src')
     if formatter:
         content = formatter.format(content)
     return content

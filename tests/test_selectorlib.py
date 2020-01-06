@@ -51,6 +51,7 @@ def test_content(html, input_yaml, output_yaml):
     formatters = formatter.Formatter.get_all()
     extractor = selectorlib.Extractor.from_yaml_string(input_yaml, formatters=formatters)
     output = extractor.extract(html, base_url=base_url)
+    print(output)
     assert output == yaml.safe_load(output_yaml)
 
 

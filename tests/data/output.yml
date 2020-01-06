@@ -4,6 +4,7 @@ description: "Bulbasaur can be seen napping in bright sunlight. There is a seed 
   \ its back. By soaking up the sun\u2019s rays, the seed grows progressively larger."
 name: Bulbasaur
 price: "\xA3 63.00"
+image: 'https://scrapeme.live/wp-content/uploads/2018/08/001.png'
 related_products:
 - {name: Fearow, price: "\xA3 95.00", sku: 9127, url: 'https://scrapeme.live/shop/Fearow/'}
 - {name: Blastoise, price: "\xA3 76.00", sku: 5212, url: 'https://scrapeme.live/shop/Blastoise/'}
