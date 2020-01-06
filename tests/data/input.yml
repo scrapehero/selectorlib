@@ -4,6 +4,9 @@ name:
 price:
     css: p.price
     type: Text
+image:
+    css: img.wp-post-image
+    type: Image
 stock:
     css: p.stock
     type: Text
