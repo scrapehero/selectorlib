@@ -84,6 +84,8 @@ class Extractor:
             else:
                 elements = parent_parser.css(field_config['css'])
         item_type = field_config.get('type', 'Text')
+        if not elements:
+            return None
         values = []
 
         for element in elements:
