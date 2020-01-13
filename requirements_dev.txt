@@ -1,7 +1,7 @@
 wheel
 flake8
 tox
-coverage
+coverage==5.0.3
 Sphinx
 twine
 
