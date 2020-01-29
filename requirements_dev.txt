@@ -1,4 +1,4 @@
-wheel
+wheel==0.34.1
 flake8
 tox
 coverage
