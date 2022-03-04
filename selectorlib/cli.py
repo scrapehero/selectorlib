@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 
-"""Console script for selectorlib."""
+"""Console script for Selectorlib."""
 import sys
 import click
 
 
 @click.command()
 def main(args=None):
-    """Console script for selectorlib."""
+    """Console script for Selectorlib."""
     click.echo("Replace this message by putting your code into "
-               "selectorlib.cli.main")
+               "Selectorlib.cli.main")
     click.echo("See click documentation at http://click.pocoo.org/")
     return 0
 

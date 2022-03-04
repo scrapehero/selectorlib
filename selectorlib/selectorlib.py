@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
+import re
 import parsel
 import yaml
 import inspect
-
 
 def extract_field(element, item_type, attribute=None, formatter=None):
     if item_type == 'Text':
@@ -35,7 +35,7 @@ class Extractor:
     def from_yaml_string(cls, yaml_string: str, formatters=None):
         """create `Extractor` object from yaml string
 
-        >>> yaml_string = '''
+        >>> yaml_string = ''
             title:
                 css: "h1"
                 type: Text
@@ -77,13 +77,19 @@ class Extractor:
     def _extract_selector(self, field_config, parent_parser):
         if field_config.get("xpath") is not None:
             elements = parent_parser.xpath(field_config['xpath'])
+            if len(elements) == 0:
+                if field_config.get("xpath_alias") is not None:
+                    elements = parent_parser.xpath(field_config['alias'])
+
         else:
             css = field_config['css']
             if css == '':
                 elements = [parent_parser]
             else:
                 elements = parent_parser.css(field_config['css'])
+
         item_type = field_config.get('type', 'Text')
+        # print(field_config) # Returns all fields
         if not elements:
             return None
         values = []
@@ -100,6 +106,11 @@ class Extractor:
                 value = extract_field(element, item_type, **kwargs)
 
             if field_config.get('multiple') is not True:
+                if 're' in field_config:
+                    pattern = re.compile(f'{field_config.get("re")}')
+                    regex = re.sub(pattern, '', value)
+                    return regex
+
                 return value
             else:
                 values.append(value)
