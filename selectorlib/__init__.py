@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""Top-level package for selectorlib."""
+"""Top-level package for Selectorlib."""
 
 __author__ = """scrapehero"""
 __email__ = 'pypi@scrapehero.com'
