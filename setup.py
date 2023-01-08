@@ -34,7 +34,8 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
     ],
-    description="A library to read a YML file with Xpath or CSS Selectors and extract data from HTML pages using them",
+    description="A library to read a YML file with Xpath or CSS Selectors"
+                " and extract data from HTML pages using them",
     entry_points={
         'console_scripts': [
             'selectorlib=selectorlib.cli:main',

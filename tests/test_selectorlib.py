@@ -65,7 +65,10 @@ def extract_field_test_html():
 def test_content(html, input_yaml, output_yaml):
     base_url = "https://scrapeme.live/shop/Bulbasaur/"
     formatters = formatter.Formatter.get_all()
-    extractor = selectorlib.Extractor.from_yaml_string(input_yaml, formatters=formatters)
+    extractor = selectorlib.Extractor.from_yaml_string(
+        input_yaml,
+        formatters=formatters
+    )
     output = extractor.extract(html, base_url=base_url)
     assert output == yaml.safe_load(output_yaml)
 
@@ -90,8 +93,13 @@ def test_empty_selector_in_children(
                "/B004K4CIKC/ref=sr_1_3?qid=1563864262&refinements=p_89:NIKE" \
                "&s=apparel&sr=1-3"
     formatters = formatter.Formatter.get_all()
-    extractor = selectorlib.Extractor.from_yaml_string(empty_selector_yaml, formatters=formatters)
-    output = extractor.extract(amazon_nike_product_page_html, base_url=base_url)
+    extractor = selectorlib.Extractor.from_yaml_string(
+        empty_selector_yaml, formatters=formatters
+    )
+    output = extractor.extract(
+        amazon_nike_product_page_html,
+        base_url=base_url
+    )
     assert output == json.loads(amazon_nike_product_page_output)
 
 
