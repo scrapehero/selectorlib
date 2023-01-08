@@ -8,7 +8,9 @@ from .exceptions import UnsupportedItemType
 
 def extract_field(element, item_type, attribute=None, formatter=None):
     if item_type == 'Text':
-        texts = [i.strip() for i in element.xpath('.//text()').getall() if i.strip()]
+        texts = [
+            i.strip() for i in element.xpath('.//text()').getall() if i.strip()
+        ]
         content = " ".join(texts)
     elif item_type == 'Link':
         content = element.xpath('.//@href').get()
@@ -68,7 +70,8 @@ class Extractor:
         """
         Args:
             html: html string
-            base_url (str, optional): specifying the base_url will make all extracted Links absolute
+            base_url (str, optional): specifying the base_url will make all
+             extracted Links absolute
         Returns:
             dict: extracted data from given html string
 
@@ -80,7 +83,9 @@ class Extractor:
             sel.root.make_links_absolute()
         fields_data = {}
         for selector_name, selector_config in self.config.items():
-            fields_data[selector_name] = self._extract_selector(selector_config, sel)
+            fields_data[selector_name] = self._extract_selector(
+                selector_config, sel
+            )
         return fields_data
 
     def _extract_selector(self, field_config, parent_parser):
@@ -105,7 +110,9 @@ class Extractor:
                 if 'attribute' in field_config:
                     kwargs['attribute'] = field_config['attribute']
                 if 'format' in field_config:
-                    kwargs['formatter'] = self.formatters[field_config['format']]
+                    kwargs['formatter'] = self.formatters[
+                        field_config['format']
+                    ]
                 value = extract_field(element, item_type, **kwargs)
 
             if field_config.get('multiple') is not True:
@@ -119,7 +126,10 @@ class Extractor:
         children_config = field_config['children']
         child_item = {}
         for field in children_config:
-            child_value = self._extract_selector(children_config[field], element)
+            child_value = self._extract_selector(
+                children_config[field],
+                element
+            )
             child_item[field] = child_value
         return child_item
 

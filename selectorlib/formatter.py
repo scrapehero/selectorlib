@@ -4,7 +4,8 @@ class Formatter:
     """
 
     def format(self, text: str):
-        """Override this function in inherited subclass. return text after formatting"""
+        """Override this function in inherited subclass.
+         return text after formatting"""
         return text
 
     @property
