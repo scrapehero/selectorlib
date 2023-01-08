@@ -3,6 +3,8 @@ import parsel
 import yaml
 import inspect
 
+from .exceptions import UnsupportedItemType
+
 
 def extract_field(element, item_type, attribute=None, formatter=None):
     if item_type == 'Text':
@@ -16,6 +18,12 @@ def extract_field(element, item_type, attribute=None, formatter=None):
         content = element.attrib.get(attribute)
     elif item_type == 'Image':
         content = element.attrib.get('src')
+    else:
+        raise UnsupportedItemType(
+            f'Item Type "{item_type}" is not supported.'
+            f' Supported item_types are ["Text", "Link", "HTML", "Attribute",'
+            f' "Image"]'
+        )
     if formatter:
         content = formatter.format(content)
     return content
@@ -24,6 +32,7 @@ def extract_field(element, item_type, attribute=None, formatter=None):
 class Extractor:
     """selector class"""
     def __init__(self, config, formatters=None):
+        self._validate_config(config)
         self.config = config
         if formatters:
             formatters = [i() if inspect.isclass(i) else i for i in formatters]
@@ -113,3 +122,17 @@ class Extractor:
             child_value = self._extract_selector(children_config[field], element)
             child_item[field] = child_value
         return child_item
+
+    def _validate_config(self, config):
+        if not isinstance(config, dict):
+            raise TypeError("Expected <dict> for config")
+
+        valid_field_types = {'Text', 'Link', 'HTML', 'Image', 'Attribute'}
+        for field_name, field_config in config.items():
+            if field_config.get('type') not in valid_field_types:
+                raise UnsupportedItemType(
+                    f'Item Type "{field_config.get("type")}" for Field '
+                    f'"{field_name}" is not supported. Supported item_types'
+                    f' are ["Text", "Link", "HTML", "Attribute",'
+                    f' "Image"]'
+                )

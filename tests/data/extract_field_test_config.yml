@@ -1,0 +1,25 @@
+test_text:
+    css: null
+    xpath: '//p'
+    type: Text
+
+test_link:
+    css: null
+    xpath: '//a'
+    type: Link
+
+test_html:
+    css: null
+    xpath: '//a'
+    type: HTML
+
+test_attr:
+    css: null
+    xpath: '//p[@class="description"]'
+    type: Attribute
+    attribute: class
+
+test_img:
+    css: null
+    xpath: //img
+    type: Image

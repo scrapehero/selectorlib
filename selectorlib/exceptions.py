@@ -1,0 +1,2 @@
+class UnsupportedItemType(Exception):
+    pass
