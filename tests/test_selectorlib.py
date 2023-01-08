@@ -110,10 +110,18 @@ def test_extract_field_supported_item_types(
     }
 
 
-def test_extract_field_unsupported_item_types():
-    yaml_string = """test_text:
+@pytest.mark.parametrize("unsupported_item_type", [
+    "text",
+    "html",
+    "link",
+    "image",
+    "attribute",
+    "test_item_type"
+])
+def test_extract_field_unsupported_item_types(unsupported_item_type):
+    yaml_string = f"""test_text:
     css: null
     xpath: '//p'
-    type: text"""
+    type: {unsupported_item_type}"""
     with pytest.raises(exceptions.UnsupportedItemType):
         selectorlib.Extractor.from_yaml_string(yaml_string)
